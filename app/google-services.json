@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "516452982212",
+    "firebase_url": "https://madassignment-1bc52.firebaseio.com",
+    "project_id": "madassignment-1bc52",
+    "storage_bucket": "madassignment-1bc52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516452982212:android:51751836dc183d60e65891",
+        "android_client_info": {
+          "package_name": "com.mrframer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516452982212-ep56p5q513gnnpimddodea94rvpu9dfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDELV6FdeyMvpY_5hgX4u-UrrERvroyCJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516452982212-ep56p5q513gnnpimddodea94rvpu9dfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

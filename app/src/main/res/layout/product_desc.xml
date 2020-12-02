@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:scrollbars="horizontal"
+    tools:context=".ProdDesc"
+    android:background="@drawable/gradient"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+            <ImageView
+                android:id="@+id/arrow_back_icon"
+                android:layout_width="@dimen/header_image"
+                android:layout_height="@dimen/header_image"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center|center_horizontal"
+                android:text="Product Description"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/header_text" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                app:alignItems="center"
+                app:flexWrap="wrap">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+
+                    app:cardCornerRadius="5dp">
+
+                    <ImageView
+                        android:id="@+id/product_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image1" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Tomato"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Category: "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/item_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Weight: "
+                    android:textColor="@color/black" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:alignItems="center"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+                    app:justifyContent="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center|center_horizontal"
+                        android:text="Quantity"
+                        android:textColor="@color/black" />
+
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/qty_button"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        app:backGroundColor="@color/button_in_desc"
+                        app:textSize="8dp"
+                        app:initialNumber="1"></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:alignItems="center"
+                    app:flexWrap="wrap">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/prod_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="RM 3.60"
+                            android:textColor="@color/price_in_desc"
+                            android:textSize="32dp" />
+
+                        <TextView
+                            android:id="@+id/stock_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In Stock"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            />
+
+                    </LinearLayout>
+
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+
+            </com.google.android.flexbox.FlexboxLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp" />
+
+
+
+
+
+            <Button
+                android:id="@+id/add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/button_in_desc"
+                android:text="Add To Cart" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+

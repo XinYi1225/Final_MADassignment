@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.madassignment">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MADassignment"
+        tools:replace="android:theme">
+
+
+        <activity android:name=".PaymentDoneActivity"/>
+        <activity android:name=".deliveryCheckout.CheckoutActivity"/>
+        <activity android:name=".pickupCheckout.PickupActivity" />
+        <activity android:name=".myPurchase.MyPurchaseActivity"/>
+        <activity android:name=".delivery.HistoryActivity" />
+        <activity android:name=".changePassword2"/>
+        <activity android:name=".Chicken" />
+        <activity android:name=".Egg" />
+        <activity android:name=".Fruit" />
+        <activity android:name=".SeafoodActivity" />
+        <activity android:name=".Edit_profile2" />
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".PromotionDesc" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".Vegetables" />
+        <activity android:name=".ProdDesc" />
+        <activity android:name=".Login" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".Delivery" />
+        <activity android:name=".DeliveryOrPickup" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".PickUp" />
+        <activity android:name=".StoreLocation" />
+        <activity android:name=".store_map1" />
+        <activity android:name=".store_map2" />
+        <activity android:name=".View_Profile" />
+        <activity android:name=".Edit_Profile2" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA6CdCk7Rc0uC8ohj9vqqBDm2zt5JJlagg" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="titleTextAppearance">@style/TitleTextAppearance</item>
+    </style>
+
+    <style name="TitleTextAppearance">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="justifyContent">center</item>
+        <item name="android:fontFamily">@font/roboto</item>
+
+    </style>
+
+    <style name="round_shape">
+        <item name="cornerSize">50%</item>
+        <item name="color">@color/white</item>
+    </style>
+
+</resources>

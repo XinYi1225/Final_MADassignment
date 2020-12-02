@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    tools:context=".SignUp">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/headerColor">
+
+            <ImageView
+                android:id="@+id/arrow_back_icon"
+                android:layout_width="@dimen/header_image"
+                android:layout_height="@dimen/header_image"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center|center_horizontal"
+                android:text="Delivery/PickUp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/header_text" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        app:alignItems="center"
+        app:flexDirection="column"
+        app:flexWrap="wrap">
+
+        <TextView
+            android:id="@+id/get_started"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/maven_pro"
+            android:text="Is This Order for Delivery or Pick Up?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/mrfarmer_logo_login"
+            android:layout_width="145dp"
+            android:layout_height="138dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/mrfarmerlogo" />
+
+        <Button
+            android:id="@+id/delivery_button"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/maven_pro"
+            android:text="Delivery"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:backgroundTint="#FF9800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/maven_pro"
+            android:text="OR"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/pickup_button"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/maven_pro"
+            android:text="Pick Up"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:backgroundTint="#FF9800" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
+    app:flexWrap="wrap"
+    app:alignItems="center"
+    app:justifyContent="center"
+    app:flexDirection="column">
+
+    <TextView
+        android:id="@+id/get_started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Let's Get Started!"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/mrfarmer_logo_login"
+        android:layout_width="145dp"
+        android:layout_height="138dp"
+        app:srcCompat="@drawable/mrfarmerlogo"
+        android:layout_marginTop="31dp"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:justifyContent="center"
+        app:flexDirection="row">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout_login"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_login"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Email Address*"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:justifyContent="center"
+        app:flexDirection="row">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_layout_login"
+            app:passwordToggleEnabled="true"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_border">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_login"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Password*"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:justifyContent="flex_end"
+        app:flexDirection="row">
+
+        <TextView
+            android:id="@+id/clickable_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot password"
+            android:textColor="@color/black"
+            android:fontFamily="@font/maven_pro"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:layout_marginTop="10dp"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/maven_pro"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="#FF9800"
+        android:layout_marginTop="24dp"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:justifyContent="flex_start"
+        app:flexDirection="row">
+
+        <CheckBox
+            android:id="@+id/login_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/maven_pro"
+            android:text="Keep Me Logged In"
+            android:textColor="@color/black" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/no_account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/maven_pro"
+        android:text="Do not have any account yet?"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/clickable_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sign Up Now"
+        android:textColor="#FF9800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+
+</com.google.android.flexbox.FlexboxLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/headerColor">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/map_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:background="@color/headerColor"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            android:layout_gravity="center_vertical|center_horizontal">
+
+            <ImageView
+                android:id="@+id/arrow_back_icon"
+                android:layout_width="@dimen/header_image"
+                android:layout_height="@dimen/header_image"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/MyAccount1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center|center_horizontal"
+                android:layout_marginTop="15dp"
+                android:text="Map"
+                android:textColor="@color/black"
+                android:textSize="@dimen/header_text" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StoreLocation"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="215dp">
+
+    </fragment>
+
+</LinearLayout>

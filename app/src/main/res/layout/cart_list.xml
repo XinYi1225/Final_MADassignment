@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="20dp"
+    android:elevation="20dp"
+    android:padding="10dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:alignItems="center"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between"
+        >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox_in_list"
+            android:layout_width="28dp"
+            android:layout_height="28dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="10dp">
+
+            <ImageView
+                android:id="@+id/cart_item_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tomato" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            app:flexDirection="column"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:flexWrap="wrap"
+            app:justifyContent="space_between">
+
+            <TextView
+                android:id="@+id/cart_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valencia Orange (1 pc)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="#0cc5b7"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/cart_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="RM "
+                android:textColor="#fc0707" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            app:alignItems="center"
+            app:flexDirection="column"
+            app:flexWrap="wrap"
+           >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Qty"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cart_adjuster_background"
+                app:alignItems="center"
+                app:flexWrap="wrap"
+                android:layout_marginTop="10dp"
+                app:justifyContent="space_evenly"
+                >
+
+                <ImageButton
+                    android:id="@+id/minus_qty"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/minus_sign"
+                    android:backgroundTint="@color/white"
+
+                    />
+
+                <TextView
+                    android:id="@+id/cart_item_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#17F44336"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+
+                <ImageButton
+                    android:id="@+id/add_qty"
+                    android:layout_width="20dp"
+                    android:background="@drawable/plus"
+                    android:backgroundTint="@color/white"
+                    android:layout_height="20dp"
+                    android:text="S" />
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+</androidx.cardview.widget.CardView>

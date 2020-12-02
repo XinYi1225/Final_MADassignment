@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    tools:context=".Delivery">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/headerColor">
+
+            <ImageView
+                android:id="@+id/arrow_back_icon"
+                android:layout_width="@dimen/header_image"
+                android:layout_height="@dimen/header_image"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center|center_horizontal"
+                android:text="Delivery"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/header_text" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flex_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        app:alignItems="center"
+        app:flexDirection="column"
+        app:flexWrap="wrap">
+
+
+        <ImageView
+            android:id="@+id/mrfarmer_logo_login"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/delivery" />
+
+        <RadioGroup
+            android:id="@+id/delivery_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp">
+
+            <RadioButton
+                android:id="@+id/delivery_radiobutton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF9800"
+                android:fontFamily="@font/maven_pro"
+                android:text="HOME (Primary Address)"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:paddingEnd="10dp"
+                    app:srcCompat="@drawable/house" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/address1_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/maven_pro"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/town_delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/maven_pro"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/postalCode_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/maven_pro"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/state_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/maven_pro"
+                            android:textColor="@color/black"
+                            android:paddingLeft="5dp"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/delivery_radiobutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF9800"
+                android:fontFamily="@font/maven_pro"
+                android:text="Other Address"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/border_delivery"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:name="com.google.android.libraries.places.compat.ui.Placecomplet"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:hint="Search Location"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="15dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="searchLocation"
+                    android:paddingEnd="20dp"
+                    app:srcCompat="@drawable/ic_baseline_search_24" />
+
+
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="10dp"
+                tools:context=".Delivery"></fragment>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/delivery_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/maven_pro"
+            android:text="Checkout >>"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:backgroundTint="#FF9800" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</RelativeLayout>

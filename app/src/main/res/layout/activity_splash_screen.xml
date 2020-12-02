@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
+    app:flexWrap="wrap"
+    app:alignItems="center"
+    app:justifyContent="center"
+    app:flexDirection="column">
+
+
+    <ImageView
+        android:id="@+id/splashScreen_LOGO"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/mrframerlogo" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copyright 2020 Mr Farmer Grocer All Rights Reserved" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/copyright"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:indeterminateTint="@color/black"
+        />
+
+</com.google.android.flexbox.FlexboxLayout>

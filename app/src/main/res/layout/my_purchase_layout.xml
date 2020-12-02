@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:flexDirection="row"
+    app:flexWrap="wrap"
+    app:justifyContent="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/spacing"
+        app:cardCornerRadius="20dp"
+        card_view:cardElevation="10dp"
+        card_view:contentPadding="20dp"
+        tools:targetApi="lollipop">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:flexDirection="row"
+            app:flexWrap="wrap">
+
+            <ImageView
+                android:id="@+id/item_pic"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                app:srcCompat="@drawable/tomato"></ImageView>
+            <!--                android:importantForAccessibility="no"-->
+
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing"
+                android:background="@color/white"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start">
+
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</com.google.android.flexbox.FlexboxLayout>

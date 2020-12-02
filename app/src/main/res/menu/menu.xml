@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home"
+        android:title="Home" />
+
+    <item android:title="Categories">
+        <menu>
+            <group
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_vegetables"
+                    android:icon="@drawable/nav_vegetables"
+                    android:title="Vegetables" />
+
+                <item
+                    android:id="@+id/nav_fruits"
+                    android:icon="@drawable/nav_fruit"
+                    android:title="Fruits" />
+
+                <item
+                    android:id="@+id/nav_seafoods"
+                    android:icon="@drawable/nav_seafood"
+                    android:title="Seafoods" />
+
+                <item
+                    android:id="@+id/nav_chickens"
+                    android:icon="@drawable/nav_chicken"
+                    android:title="Chickens" />
+
+                <item
+                    android:id="@+id/nav_eggs"
+                    android:icon="@drawable/nav_eggs"
+                    android:title="Eggs" />
+
+            </group>
+        </menu>
+    </item>
+
+    <group
+        android:id="@+id/group4"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_myCart"
+            android:icon="@drawable/addtocart"
+            android:title="My Cart" />
+    </group>
+
+    <group
+        android:id="@+id/group5"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/nav_account"
+            android:title="My Account" />
+
+        <item
+            android:id="@+id/nav_orderHistory"
+            android:icon="@drawable/nav_orderhistory"
+            android:title="Order History" />
+
+        <item
+            android:id="@+id/nav_store"
+            android:icon="@drawable/nav_store"
+            android:title="Store " />
+
+    </group>
+
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/nav_logout"
+        android:title="Logout" />
+
+
+</menu>

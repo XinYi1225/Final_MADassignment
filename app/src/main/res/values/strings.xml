@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">MAD Assignment</string>
+
+    <string name="affirmation1">Tomatoes</string>
+    <string name="affirmation2">Celery (+500g)</string>
+    <string name="affirmation3">Kacang Buncis (+500g)</string>
+    <string name="affirmation4">Washed Potato (+500g)</string>
+    <string name="affirmation5">Romaine (+500g)</string>
+    <string name="affirmation6">Sawi Jepun (+500g)</string>
+    <string name="affirmation7">Kacang Panjang (+500g)</string>
+    <string name="affirmation8">Lobak Putih (+500g)</string>
+    <string name="affirmation9">Nai Bak Zai/Baby Susu (+200g)</string>
+    <string name="affirmation10">Peria (+500g)</string>
+    <string name="stock1">Tomatoes</string>
+    <string name="haveStock">In stock</string>
+    <string name="outOfStock">Out of stock</string>
+
+    <string name="dialogTitle">Confirmation</string>
+    <string name="dialogMessage">Are you sure want to logout ?</string>
+
+    <string name="dialogTitle_save">Save Changes </string>
+    <string name="dialogMessage_save">Do you want to save the profile details ?</string>
+
+    <string name="dialogTitle_cancel">Are you sure to cancel ? </string>
+
+
+    //sam
+    <string name="delivery_address">Delivery Address</string>
+    <string name="delivery_address_hint">Enter your delivery address.</string>
+    <string name="request">REQUESTS<b>*</b> [OPTIONAL]</string>
+    <string name="request_hint">E.g. Pack the tomato in another plastic bag.</string>
+    <string name="optional_request">We will try our best to fulfill your requirements.</string>
+    <string name="payment">Select Payment Method </string>
+    <string name="fpx_payment">Online Banking </string>
+    <string name="cash_payment">Cash </string>
+    <string name="credit_payment">Debit/Credit Card </string>
+    <string name="subtotal">Subtotal</string>
+    <string name="semicolon">: </string>
+    <string name="tab">\u0009</string>
+    <string name="ringgit">RM </string>
+    <string name="shipping">Shipping Fees</string>
+    <string name="total">Total</string>
+    <string name="totalPayment">Total Payment :RM </string>
+    <string name="place_order">Place Order</string>
+    <string name="payDone">Payment has been made successfully!</string>
+    <string name="done">DONE</string>
+
+    <!--pickup page-->
+    <string name="pickup_address">Pickup Address</string>
+    <string name="pickup_address_hint">Enter your pickup address.</string>
+
+    <!--order history page-->
+    <string name="trans_date">Transaction Date :</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--online banking page-->
+    <string-array name="bank_list">
+        <item>Public Bank</item>
+        <item>Maybank2u</item>
+        <item>CIMB Clicks</item>
+    </string-array>
+
+    <string name="deliver">Delivery</string>
+    <string name="pickUp">PickUp</string>
+    <string name="viewMore">View More Products</string>
+    <string name="payMethod">Payment Method</string>
+
+    <string name="total_items">Total items :</string>
+
+
+</resources>

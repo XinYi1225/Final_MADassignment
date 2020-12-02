@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    android:scrollbars="horizontal">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/headerColor">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="@dimen/header_image"
+                android:layout_height="@dimen/header_image"
+                android:src="@drawable/arrow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center|center_horizontal"
+                android:text="Today's Special"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/header_text" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignItems="center"
+                    app:flexDirection="column"
+                    app:flexWrap="wrap">
+
+
+                    <ImageView
+                        android:id="@+id/promotion_image"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/home_chicken" />
+                </com.google.android.flexbox.FlexboxLayout>
+
+
+                <TextView
+                    android:id="@+id/discount_text_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/discount_rounded_background"
+                    android:padding="5dp"
+                    android:text="25% Discount "
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/headerColor"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                card_view:contentPadding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cardview_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:shadowColor="@color/text_shadow"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        android:text="25% OFF Fresh Chicken"
+                        android:textColor="#FF2196F3"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/cardview_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center|center_horizontal"
+                        android:text="RM 10.90"
+                        android:textColor="#0c2ec5"
+                        android:textSize="24sp" />
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:alignItems="center"
+                        app:flexDirection="row"
+                        app:flexWrap="wrap"
+                        app:justifyContent="center">
+
+                        <TextView
+                            android:id="@+id/cardview_qty_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="30dp"
+                            android:gravity="center|center_horizontal"
+                            android:text="Quantity"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+
+                        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                            android:id="@+id/cardview_qty_btn"
+                            android:layout_width="120dp"
+                            android:layout_height="50dp"
+                            app:backGroundColor="#FF9800"
+                            app:finalNumber="3"
+                            app:initialNumber="1"
+                            app:textSize="8dp"
+                            tools:replace="android:theme">
+
+                        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+                    </com.google.android.flexbox.FlexboxLayout>
+
+                    <TextView
+                        android:id="@+id/cardview_limited_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*Limited 3 units per user"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/cardview_promotion_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Promotion valid from 25 Nov - 25 Dec 2020"
+                        android:textColor="#808080"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+
+                    <TextView
+                        android:id="@+id/cardview_store_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="*While stock last."
+                        android:textColor="#808080"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/addtocart"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FF9800"
+                android:text="Add To Cart" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

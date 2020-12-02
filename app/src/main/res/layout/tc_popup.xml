@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="100dp"
+    android:layout_marginBottom="100dp"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="40dp">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close_icon"
+        app:srcCompat="@drawable/cross"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"  />
+
+    <TextView
+        android:id="@+id/terms_and_conditions_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="TERMS AND CONDITIONS"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/terms_and_conditions_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="Overview"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_overview_con1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="This mobile application is operated by Mr Farmer Grocer. Throughout the site, the terms “we”, “us” and “our” refer to Mr Farmer Grocer. Mr Farmer Grocer offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_overview_con2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="By visiting our application and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_overview_con3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_overview_con4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="Section 1 -Online Store Terms"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec1_con1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec1_con2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws)."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec1_con3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="You must not transmit any worms or viruses or any code of a destructive nature."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec1_con4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="A breach or violation of any of the Terms will result in an immediate termination of your Services."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="Section 2 - General Conditions"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec2_con1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="We reserve the right to refuse service to anyone for any reason at any time."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec2_con2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="You understand that your content (not including credit card information), may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec2_con3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service or any contact on the website through which the service is provided, without express written permission by us."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions_sec2_con4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:fontFamily="@font/maven_pro"
+                android:gravity="left"
+                android:text="The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms."
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

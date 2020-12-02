@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    app:flexDirection="row"
+    app:flexWrap="wrap"
+    app:justifyContent="center">
+
+    <!--Mr.Farmer Grocer logo-->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/mrfarmerlogo"
+        tools:ignore="VectorDrawableCompat" />
+
+    <!--Payment done image-->
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        app:alignItems="center"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+
+        <TextView
+            android:id="@+id/payment_done_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/payDone"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size" />
+
+        <ImageView
+            android:id="@+id/done"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/checked"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_marginTop="20dp"/>
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <Button
+        android:id="@+id/payment_done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/roboto"
+        android:text="@string/done"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size"
+        app:backgroundTint="#FF9800" />
+
+
+</com.google.android.flexbox.FlexboxLayout>
+
