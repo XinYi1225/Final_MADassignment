@@ -14,7 +14,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import java.util.regex.Pattern
 
-class changePassword2 : AppCompatActivity() {
+class changePassword : AppCompatActivity() {
 
     lateinit var go_back: ImageView
 

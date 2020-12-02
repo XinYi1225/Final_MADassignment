@@ -29,20 +29,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADassignment"
         tools:replace="android:theme">
-
-
-        <activity android:name=".PaymentDoneActivity"/>
-        <activity android:name=".deliveryCheckout.CheckoutActivity"/>
+        <activity android:name=".Empty_History"></activity>
+        <activity android:name=".PaymentDoneActivity" />
+        <activity android:name=".deliveryCheckout.CheckoutActivity" />
         <activity android:name=".pickupCheckout.PickupActivity" />
-        <activity android:name=".myPurchase.MyPurchaseActivity"/>
+        <activity android:name=".myPurchase.MyPurchaseActivity" />
         <activity android:name=".delivery.HistoryActivity" />
-        <activity android:name=".changePassword2"/>
+        <activity android:name=".changePassword" />
         <activity android:name=".Chicken" />
         <activity android:name=".Egg" />
         <activity android:name=".Fruit" />
         <activity android:name=".SeafoodActivity" />
-        <activity android:name=".Edit_profile2" />
-        <activity android:name=".ChangePassword" />
+        <activity android:name=".Edit_profile" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PromotionDesc" />
         <activity android:name=".CartActivity" />
@@ -58,7 +56,6 @@
         <activity android:name=".store_map1" />
         <activity android:name=".store_map2" />
         <activity android:name=".View_Profile" />
-        <activity android:name=".Edit_Profile2" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -128,7 +128,8 @@
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/edit_text_border"
                     android:padding="8dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
 
 
             </LinearLayout>
@@ -257,10 +258,10 @@
                     app:flexDirection="row"
                     app:flexWrap="wrap"
                     app:justifyContent="flex_start"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="5dp">
 
                     <TextView
-                        android:layout_width="250dp"
+                        android:layout_width="255dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:fontFamily="@font/maven_pro"
@@ -280,69 +281,7 @@
 
 
                 </com.google.android.flexbox.FlexboxLayout>
-                <com.google.android.flexbox.FlexboxLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:alignItems="center"
-                    app:flexDirection="row"
-                    app:flexWrap="wrap"
-                    app:justifyContent="flex_start">
 
-                    <TextView
-                        android:id="@+id/subtotal_text"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:fontFamily="@font/maven_pro"
-                        android:text="@string/subtotal"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size" />
-
-                    <TextView
-                        android:id="@+id/subtotal_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textAlignment="textEnd"
-                        android:fontFamily="@font/maven_pro"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size" />
-
-                </com.google.android.flexbox.FlexboxLayout>
-
-
-                <com.google.android.flexbox.FlexboxLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:alignItems="center"
-                    app:flexDirection="row"
-                    app:flexWrap="wrap"
-                    app:justifyContent="flex_start">
-
-                    <TextView
-                        android:id="@+id/shipping_text"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/shipping"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size" />
-
-                    <TextView
-                        android:id="@+id/shipping_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textAlignment="textEnd"
-                        android:fontFamily="@font/maven_pro"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size" />
-
-
-                </com.google.android.flexbox.FlexboxLayout>
 
                 <com.google.android.flexbox.FlexboxLayout
                     android:layout_width="match_parent"
@@ -361,7 +300,7 @@
                         android:fontFamily="@font/maven_pro"
                         android:text="@string/total"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -373,20 +312,25 @@
                         android:textAlignment="textEnd"
                         android:fontFamily="@font/maven_pro"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/text_size" />
+                        android:textSize="24sp" />
 
                 </com.google.android.flexbox.FlexboxLayout>
                 <com.google.android.flexbox.FlexboxLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="30dp"
+                    app:alignItems="center"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+                    app:justifyContent="flex_start">
 
                     <Button
                         android:id="@+id/done_button"
                         style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="350dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginBottom="30dp"
                         android:background="@drawable/rounded_corners"
                         android:fontFamily="@font/maven_pro"
@@ -396,6 +340,7 @@
                         android:textColor="#FFFFFF"
                         android:textSize="@dimen/text_size"
                         app:backgroundTint="#FF9800" />
+
                 </com.google.android.flexbox.FlexboxLayout>
             </LinearLayout>
 

@@ -9,16 +9,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.bumptech.glide.Glide
 import com.example.madassignment.delivery.HistoryActivity
 import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
-import com.google.android.libraries.places.internal.i
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -93,7 +90,7 @@ class View_Profile : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         clickable_edit = findViewById<ImageView>(R.id.edit_icon)
 
         clickable_edit.setOnClickListener {
-            val intent = Intent(this, Edit_profile2::class.java)
+            val intent = Intent(this, Edit_profile::class.java)
             startActivity(intent)
         }
 

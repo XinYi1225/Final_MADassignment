@@ -46,7 +46,6 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
         auth = FirebaseAuth.getInstance()
-//        binding = DataBindingUtil.setContentView(this, R.layout.activity_history)
 
         Log.i("DeliveryHistoryFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(DeliveryViewModel::class.java)
@@ -67,7 +66,6 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
 
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
-
 
         val header_menu : ImageView = findViewById(R.id.menu_list)
         header_menu.setOnClickListener{
@@ -99,8 +97,6 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
                     Log.i("data",historyList.size.toString())
                 }
 
-
-
             }
 
             override  fun onCancelled(databaseError : DatabaseError) {
@@ -115,45 +111,20 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
 
         itemRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    item  = snapshot.getValue(HistoryModel::class.java)!!
+                if (snapshot.exists()) {
+                    item = snapshot.getValue(HistoryModel::class.java)!!
                     for (i in item.item_list) {
                         purchaseList.item_list.add(i)
                         historyAdapter.notifyItemInserted(purchaseList.item_list.size)
                     }
-                }
-                else {
+                } else {
 
-//                    val mDialogView = LayoutInflater.from(applicationContext).inflate(R.layout.tc_popup, null);
-//
-//                    //Alert Dialog Builder
-//                    val mBuilder = android.app.AlertDialog.Builder(applicationContext)
-//                        .setView(mDialogView)
-//
-//                    //Show dialog
-//                    val mAlertDialog = mBuilder.show()
-//
-//                    val close_icon = mAlertDialog.findViewById(R.id.close_icon) as ImageView
-//                    close_icon.setOnClickListener {
-//                        //dismiss dialog
-//                        mAlertDialog.dismiss()
-//                    }
+                    val intent = Intent(applicationContext, Empty_History::class.java)
+                    startActivity(intent)
 
                 }
 
-
-//                if(item == null){
-//                    purchaseList = HistoryModel()
-//                }
-//                else {
-//                    //get recycler view item list data
-//                    for (i in item.item_list) {
-//                        purchaseList.item_list.add(i)
-//                        historyAdapter.notifyItemInserted(purchaseList.item_list.size)
-//                    }
-//                }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Log.i("cancel","noOrderHistoryFile")
             }
@@ -187,25 +158,6 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
         startActivity(myIntent)
     }
 
-
-//    fun setCheckoutData(){
-//        //write checkout details into database
-//        val database = FirebaseDatabase.getInstance()
-//        var myRef: DatabaseReference = database.getReference("OrderHistory/")
-//        val itemList : MutableList<DetailModel> = mutableListOf()
-////        val detailList : ArrayList<HistoryModel>? = null
-//        var pushkey: String?= myRef.push().key
-//
-//        //write the details of checkout into database
-//        myRef = database.getReference("OrderHistory/"+pushkey+"/")
-//        var items = DetailModel("${pushkey}","","Tomato (+-500g)", 5, 2.50)
-//        itemList.add(items)
-//        Log.i("list", itemList.toString())
-//
-//        var details = HistoryModel("${pushkey}", "2020-11-19 11:36", itemList,5,18.50,10.00,28.50,"Online Banking","Delivery")
-//        Log.i("list", details.item_list.toString())
-//        myRef.setValue(details)
-//    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.

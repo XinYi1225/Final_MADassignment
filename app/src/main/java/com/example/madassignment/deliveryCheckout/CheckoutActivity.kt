@@ -47,7 +47,6 @@ class CheckoutActivity : AppCompatActivity() {
 
         delivery_address = findViewById(R.id.delivery_address)
 
-
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
 
@@ -67,10 +66,7 @@ class CheckoutActivity : AppCompatActivity() {
         val delivery_address = findViewById<TextView>(R.id.delivery_address)
 
         delivery_address.text = display_address
-//
-//        findViewById<TextView>(R.id.request_edit_text).setOnClickListener {
-//            hideKeyboard(it)
-//        }
+
 
         calculateTotal()
 

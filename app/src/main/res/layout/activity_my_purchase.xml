@@ -41,10 +41,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.flexbox.FlexboxLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
         app:flexDirection="row"
         app:flexWrap="wrap"
         app:justifyContent="flex_start">
@@ -81,7 +82,7 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginTop="5dp"
         app:flexDirection="row"
         app:flexWrap="wrap"
         app:justifyContent="flex_end">
@@ -90,7 +91,7 @@
             android:id="@+id/quantity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="210dp"
             android:fontFamily="@font/roboto"
             android:text="Qty"
             android:textColor="@android:color/black"
@@ -101,7 +102,7 @@
             android:id="@+id/ringgit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/roboto"
             android:text="@string/ringgit"
             android:textAlignment="textEnd"
@@ -112,57 +113,73 @@
     </com.google.android.flexbox.FlexboxLayout>
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="@dimen/spacing"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:scrollbars="vertical"
-                app:layout_constraintBottom_toTopOf="@id/total_info"
-                tools:layout_editor_absoluteX="20dp" />
+                android:layout_height="350dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/total_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="@dimen/spacing"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="100dp"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerView"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="15dp"
                 card_view:cardElevation="10dp"
-                card_view:contentPadding="20dp">
+                card_view:contentPadding="12dp">
 
-                <com.google.android.flexbox.FlexboxLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    app:flexDirection="row"
-                    app:flexWrap="wrap"
-                    app:justifyContent="flex_start">
+                    android:orientation="vertical">
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@color/orange"></View>
+                        android:layout_height="1dp"
+                        android:background="@color/orange"/>
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:flexDirection="row"
+                        app:flexWrap="wrap"
+                        app:justifyContent="flex_start"
+                        app:alignItems="center">
 
                     <TextView
                         android:id="@+id/total_item_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/total_items"
+                        android:text="Total items : "
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/text_size" />
 
@@ -170,20 +187,19 @@
                         android:id="@+id/total_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:fontFamily="@font/roboto"
                         android:text="5"
                         android:textColor="@color/orange"
                         android:textSize="@dimen/text_size"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"/>
+
+                    </com.google.android.flexbox.FlexboxLayout>
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@color/orange">
-
-                    </View>
+                        android:layout_height="1dp"
+                        android:background="@color/orange"/>
 
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="match_parent"
@@ -194,43 +210,33 @@
 
                         <TextView
                             android:id="@+id/payment_method_text"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
                             android:text="@string/payMethod"
                             android:textColor="@android:color/black"
-                            android:textSize="@dimen/text_size" />
-
-                        <ImageView
-                            android:id="@+id/pay_logo"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:importantForAccessibility="no"
-                            app:srcCompat="@drawable/mrfarmerlogo"></ImageView>
+                            android:textSize="19sp"
+                            android:layout_marginTop="3dp"/>
 
                         <TextView
                             android:id="@+id/payment_method"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
                             android:layout_marginTop="3dp"
                             android:fontFamily="@font/roboto"
                             android:text="Credit/Debit Card"
                             android:textColor="@color/orange"
-                            android:textSize="@dimen/text_size"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginEnd="18dp"
-                            android:background="@color/orange">
-
-                        </View>
-
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
                     </com.google.android.flexbox.FlexboxLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/orange"/>
+
 
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="match_parent"
@@ -241,20 +247,14 @@
 
                         <TextView
                             android:id="@+id/status_text"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Status"
+                            android:text="Status :"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size" />
 
-                        <ImageView
-                            android:id="@id/pay_logo"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:importantForAccessibility="no"
-                            app:srcCompat="@drawable/mrfarmerlogo"></ImageView>
 
                         <TextView
                             android:id="@+id/status"
@@ -266,22 +266,20 @@
                             android:text="Delivery"
                             android:textColor="@color/orange"
                             android:textSize="@dimen/text_size"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginEnd="18dp"
-                            android:background="@color/orange">
-
-                        </View>
                     </com.google.android.flexbox.FlexboxLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/orange"/>
 
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing"
+                        android:layout_marginTop="10dp"
                         app:flexDirection="row"
                         app:flexWrap="wrap"
                         app:justifyContent="flex_start">
@@ -291,7 +289,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
-                            android:text="Subtotal              :RM"
+                            android:text="Subtotal              : RM "
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size"
                             android:textStyle="bold" />
@@ -300,7 +298,7 @@
                             android:id="@+id/subtotal_amt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/roboto"
                             android:textColor="@color/orange"
                             android:textSize="@dimen/text_size"
@@ -311,7 +309,7 @@
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing"
+                        android:layout_marginTop="10dp"
                         app:flexDirection="row"
                         app:flexWrap="wrap"
                         app:justifyContent="flex_start">
@@ -321,7 +319,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
-                            android:text="Shipping Fees  : RM"
+                            android:text="Shipping Fees    : RM "
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size"
                             android:textStyle="bold" />
@@ -330,7 +328,7 @@
                             android:id="@+id/shipping_amt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/roboto"
                             android:textColor="@color/orange"
                             android:textSize="@dimen/text_size"
@@ -341,7 +339,7 @@
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing"
+                        android:layout_marginTop="10dp"
                         app:flexDirection="row"
                         app:flexWrap="wrap"
                         app:justifyContent="flex_start">
@@ -351,7 +349,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto"
-                            android:text="@string/totalPayment"
+                            android:text="Total Payment   : RM "
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/text_size"
                             android:textStyle="bold" />
@@ -360,7 +358,7 @@
                             android:id="@+id/total_order_amt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="5dp"
                             android:fontFamily="@font/roboto"
                             android:textColor="@color/orange"
                             android:textSize="@dimen/text_size"
@@ -368,10 +366,10 @@
 
                     </com.google.android.flexbox.FlexboxLayout>
 
-                </com.google.android.flexbox.FlexboxLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.flexbox.FlexboxLayout>

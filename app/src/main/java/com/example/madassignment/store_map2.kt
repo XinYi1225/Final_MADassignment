@@ -90,15 +90,7 @@ class store_map2 : AppCompatActivity(), OnMapReadyCallback {
             setTiltGesturesEnabled(true)
             setRotateGesturesEnabled(true)
 
-            /*isZoomControlsEnabled = isChecked(R.id.zoom_button)
-            isCompassEnabled = isChecked(R.id.compass_button)
-            isMyLocationButtonEnabled = isChecked(R.id.myloc_button)
-            isIndoorLevelPickerEnabled = isChecked(R.id.level_button)
-            isMapToolbarEnabled = isChecked(R.id.maptoolbar_button)
-            isZoomGesturesEnabled = isChecked(R.id.zoomgest_button)
-            isScrollGesturesEnabled = isChecked(R.id.scrollgest_button)
-            isTiltGesturesEnabled = isChecked(R.id.tiltgest_button)
-            isRotateGesturesEnabled = isChecked(R.id.rotategest_button)*/
+
 
         }
     }

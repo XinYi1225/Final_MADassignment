@@ -179,15 +179,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
             setTiltGesturesEnabled(true)
             setRotateGesturesEnabled(true)
 
-            /*isZoomControlsEnabled = isChecked(R.id.zoom_button)
-            isCompassEnabled = isChecked(R.id.compass_button)
-            isMyLocationButtonEnabled = isChecked(R.id.myloc_button)
-            isIndoorLevelPickerEnabled = isChecked(R.id.level_button)
-            isMapToolbarEnabled = isChecked(R.id.maptoolbar_button)
-            isZoomGesturesEnabled = isChecked(R.id.zoomgest_button)
-            isScrollGesturesEnabled = isChecked(R.id.scrollgest_button)
-            isTiltGesturesEnabled = isChecked(R.id.tiltgest_button)
-            isRotateGesturesEnabled = isChecked(R.id.rotategest_button)*/
 
         }
 //        getLocationAccess()
@@ -226,32 +217,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
         else -> super.onOptionsItemSelected(item)
     }
 
-
-
-
-
-
-
-//        override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-//        // Change the map type based on the user's selection.
-//            R.id.normal_map -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
-//                true
-//            }
-//            R.id.hybrid_map -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
-//                true
-//            }
-//            R.id.satellite_map -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
-//                true
-//            }
-//            R.id.terrain_map -> {
-//                mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
-//                true
-//            }
-//        else -> super.onOptionsItemSelected(item)
-//    }
 
 
 }

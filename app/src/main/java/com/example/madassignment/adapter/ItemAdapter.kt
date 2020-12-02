@@ -1,7 +1,6 @@
 package com.example.madassignment.adapter
 
 import android.content.Context
-import android.media.Image
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.madassignment.R
 import com.example.madassignment.object_class.Item
-
 
 
 class ItemAdapter(
@@ -83,6 +81,12 @@ class ItemAdapter(
                 holder.stockStatusIcon.setImageResource(R.drawable.nostock)
                 holder.stockStatus.text = context.getString(R.string.outOfStock)
             }
+        } else if (item.itemQtyRemain_kg_or_pcs > 0.0) {
+            holder.stockStatusIcon.setImageResource(R.drawable.instock)
+            holder.stockStatus.text = context.getString(R.string.haveStock)
+        } else {
+            holder.stockStatusIcon.setImageResource(R.drawable.nostock)
+            holder.stockStatus.text = context.getString(R.string.outOfStock)
         }
 
 //        holder.stockStatusIcon.setImageResource(item.getStockStatusImage())

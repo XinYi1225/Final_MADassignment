@@ -37,8 +37,6 @@ internal class HistoryAdapter(private var historyList: List<HistoryModel>, priva
             }
         }
 
-
-
     }
 
     @NonNull

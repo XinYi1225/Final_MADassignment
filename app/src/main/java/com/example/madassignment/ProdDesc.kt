@@ -115,7 +115,7 @@ class ProdDesc : AppCompatActivity() {
                         )
                     )
                 } else {
-                    item_weight.setText("N/A")
+                    item_weight.setText("Weight: N/A")
                 }
                 item_cat.setText(item_cat.text.toString() + category)
                 addtoCart.setOnClickListener() {

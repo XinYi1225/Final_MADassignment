@@ -29,10 +29,7 @@ class ForgotPassword : AppCompatActivity(), View.OnClickListener {
         //Email Address Validation
         email_forgot_password = findViewById(R.id.email_forgot_password)
 
-        val customisedErrorIcon = resources.getDrawable(R.drawable.error_icon_display) //getDrawable(int, Resources.Theme) instead.
-        //val customisedErrorIcon = ContextCompat.getDrawable(this, R.drawable.error_icon_display);
-
-
+        val customisedErrorIcon = resources.getDrawable(R.drawable.error_icon_display)
         customisedErrorIcon?.setBounds(
             0, 0,
             customisedErrorIcon.intrinsicWidth,

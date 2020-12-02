@@ -128,6 +128,7 @@
                     android:layout_marginEnd="15dp"
                     android:background="@drawable/edit_text_border"
                     android:padding="8dp"
+                    android:textSize="18sp"
                     android:textColor="@color/black" />
 
 
@@ -361,7 +362,7 @@
                     android:fontFamily="@font/maven_pro"
                     android:text="@string/total"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/text_size"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -373,7 +374,8 @@
                     android:textAlignment="textEnd"
                     android:fontFamily="@font/maven_pro"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </com.google.android.flexbox.FlexboxLayout>
             <com.google.android.flexbox.FlexboxLayout

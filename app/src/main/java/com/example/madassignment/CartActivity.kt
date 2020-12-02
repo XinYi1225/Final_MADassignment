@@ -73,10 +73,6 @@ class CartActivity : AppCompatActivity(), ButtonClickedListener {
 
         }
 
-
-
-
-
         backTo()
         checkout()
         subtotal = ShoppingCart.calcTotal()

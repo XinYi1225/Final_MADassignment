@@ -45,13 +45,6 @@ class PickupActivity : AppCompatActivity() {
         viewModel.subtotal = ShoppingCart.calcTotal()
         getTransactionDate()
 
-
-//        val display_address: String
-//        if (intent.extras != null) {
-//            display_address = intent.getStringExtra("pickup_address").toString()
-//            Log.i("pickup_address", display_address)
-////            Glide.with(this).load(item.itemImage).into(itemImage)
-//        }
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
 
@@ -98,8 +91,8 @@ class PickupActivity : AppCompatActivity() {
     }
 
     private fun updateTotal(): Double{
-        findViewById<TextView>(R.id.subtotal_amount).text = String.format("%.2f",viewModel.subtotal)
-        findViewById<TextView>(R.id.shipping_amount).text = String.format("%.2f",viewModel.shippingFees)
+//        findViewById<TextView>(R.id.subtotal_amount).text = String.format("%.2f",viewModel.subtotal)
+    //    findViewById<TextView>(R.id.shipping_amount).text = String.format("%.2f",viewModel.shippingFees)
         findViewById<TextView>(R.id.final_payment).text = String.format("%.2f",viewModel.totalPaid)
 
         return viewModel.totalPaid
@@ -131,7 +124,7 @@ class PickupActivity : AppCompatActivity() {
 
         val transactionDate = getTransactionDate()
         val status = "Pick up"
-        val shipping_fees = 0.00
+      //  val shipping_fees = 0.00
         val total_amt = updateTotal()
 
         //write the details of checkout into database
@@ -139,7 +132,7 @@ class PickupActivity : AppCompatActivity() {
 
         Log.i("list", itemList.toString())
 
-        var details = HistoryModel(pushkey.toString(), "${transactionDate}", itemList,ShoppingCart.getShoppingCartSize(),ShoppingCart.calcTotal(), shipping_fees,total_amt,"${payMethod}","${status}")
+        var details = HistoryModel(pushkey.toString(), "${transactionDate}", itemList,ShoppingCart.getShoppingCartSize(),ShoppingCart.calcTotal(), 0.0,total_amt,"${payMethod}","${status}")
         Log.i("list", details.item_list.toString())
         myRef.setValue(details)
     }

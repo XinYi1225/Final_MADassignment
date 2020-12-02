@@ -35,8 +35,7 @@ class MyPurchaseActivity  : AppCompatActivity() {
         //Up button
         val back = findViewById<ImageView>(R.id.back)
         back.setOnClickListener {
-//            val intent = Intent(this, HistoryActivity::class.java)
-//            startActivity(intent)
+
             onBackPressed()
         }
 
@@ -46,7 +45,7 @@ class MyPurchaseActivity  : AppCompatActivity() {
 //
 //            Glide.with(this).load(item.itemImage).into(itemImage)
         }
-//        purchaseAdapter = PurchaseAdapter(purchaseList.item_list, this)
+
         getData()
         purchaseAdapter = PurchaseAdapter(purchaseList.item_list, this)
         val flexManager = FlexboxLayoutManager(this)
@@ -60,46 +59,6 @@ class MyPurchaseActivity  : AppCompatActivity() {
         recyclerView.adapter = purchaseAdapter
 
     }
-
-//    private fun getPurchaseData(){
-//        // Write a message to the database
-//        val database = FirebaseDatabase.getInstance()
-//        var myRef = database.getReference("OrderHistory/"+ key +"/")
-//
-//        // Read from the database
-//        myRef.addValueEventListener(object : ValueEventListener {
-//
-//            override fun onDataChange(dataSnapshot : DataSnapshot) {
-//
-//                dataSnapshot.getValue(HistoryModel::class.java)!!.also { purchaseList = it }
-//
-////                for ( childDataSnapshot : DataSnapshot in dataSnapshot.getChildren()) {
-////                    myRef = database.getReference("OrderHistory/"+ childDataSnapshot.getKey().toString())
-//////                    Log.i("data", childDataSnapshot.getKey().toString()); //displays the key for the node
-////
-//////                    Log.i("data",childDataSnapshot.child(childDataSnapshot.getKey().toString()).value.toString());
-////                    Log.i("data",childDataSnapshot.getValue(HistoryModel::class.java).toString());//gives the value for given keyname
-////                    childDataSnapshot.getValue(HistoryModel::class.java)?.let {purchaseList.add(it) }
-////                    purchaseAdapter.notifyItemInserted(purchaseList.size)
-////                    Log.i("data",purchaseList.size.toString())
-//////                        Log.i("data",myDataset.toString())
-////                }
-//
-//                    purchaseAdapter.notifyItemInserted(purchaseList.item_list.size)
-//
-//
-////                Log.i("data",purchaseList.toString())
-//                Log.i("data",purchaseList.item_list[0].item_name)
-//
-//
-//            }
-//
-//            override  fun onCancelled(databaseError : DatabaseError) {
-//
-//            }
-//        })
-//
-//    }
 
     fun getData(){
         var item = HistoryModel()
@@ -138,7 +97,6 @@ class MyPurchaseActivity  : AppCompatActivity() {
         }
 
         myRef.addValueEventListener(getData)
-//        myRef.addListenerForSingleValueEvent(getData)
 
 
     }

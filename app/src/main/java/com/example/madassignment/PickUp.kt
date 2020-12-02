@@ -113,9 +113,7 @@ class PickUp : AppCompatActivity(),OnMapReadyCallback {
     }
 
     private fun searchArea(location:String) {
-//        val tf_location =
-//                findViewById<View>(R.id.TF_location) as EditText
-        //val location = tf_location.text.toString()
+
         var addressList: List<Address>? = null
         val markerOptions = MarkerOptions()
 

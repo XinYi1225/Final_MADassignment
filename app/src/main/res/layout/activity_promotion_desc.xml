@@ -62,10 +62,9 @@
                     app:flexDirection="column"
                     app:flexWrap="wrap">
 
-
                     <ImageView
                         android:id="@+id/promotion_image"
-                        android:layout_width="250dp"
+                        android:layout_width="300dp"
                         android:layout_height="150dp"
                         android:layout_marginTop="30dp"
                         android:src="@drawable/home_chicken" />
@@ -74,13 +73,14 @@
 
                 <TextView
                     android:id="@+id/discount_text_image"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="15dp"
                     android:background="@drawable/discount_rounded_background"
                     android:padding="5dp"
                     android:text="25% Discount "
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -88,15 +88,15 @@
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:backgroundTint="@color/headerColor"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp"
-                card_view:contentPadding="15dp">
+                card_view:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,14 +107,13 @@
                         android:id="@+id/cardview_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="1"
                         android:shadowDy="1"
-                        android:shadowRadius="2"
                         android:text="25% OFF Fresh Chicken"
-                        android:textColor="#FF2196F3"
-                        android:textSize="24sp" />
+                        android:textColor="#FF219623"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/cardview_price"
@@ -125,7 +124,8 @@
                         android:gravity="center|center_horizontal"
                         android:text="RM 10.90"
                         android:textColor="#0c2ec5"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
 
                     <com.google.android.flexbox.FlexboxLayout
                         android:layout_width="wrap_content"
@@ -175,9 +175,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:text="Promotion valid from 25 Nov - 25 Dec 2020"
+                        android:text="Promotion valid from 1 Dec - 25 Dec 2020"
                         android:textColor="#808080"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="italic" />
 
 
@@ -185,11 +185,11 @@
                         android:id="@+id/cardview_store_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
                         android:text="*While stock last."
                         android:textColor="#808080"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="italic" />
 
 
@@ -203,7 +203,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#FF9800"

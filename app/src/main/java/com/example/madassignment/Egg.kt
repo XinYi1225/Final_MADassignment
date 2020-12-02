@@ -127,13 +127,7 @@ class Egg : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
             override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
                 toolbar.setBackgroundColor(Color.WHITE)
-//                var view = searchView.context.resources.getIdentifier("android:id/search_src_text",null,null)
-//                var textview : TextView = searchView.findViewById(view)
-//                textview.setTextColor(Color.BLACK)
 
-//                (searchView.findViewById<androidx.appcompat.widget.SearchView>(R.id.search_src_text) as EditText).setHintTextColor(
-//                    Color.BLACK
-//                )
                 return true
 
             }

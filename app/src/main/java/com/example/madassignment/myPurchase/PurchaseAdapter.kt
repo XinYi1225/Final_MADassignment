@@ -24,14 +24,6 @@ internal class PurchaseAdapter(private var purchaseList: List<DetailModel>,  pri
         var item_qty: TextView = view.findViewById(R.id.quantity)
         var item_price: TextView = view.findViewById(R.id.item_price)
 
-//        var transaction_date: TextView = view.findViewById(R.id.transaction_date)
-//        val list: MutableList<DetailModel> = mutableListOf()
-//        var total_item: TextView = view.findViewById(R.id.total_item)
-//        var paymentMethod: TextView = view.findViewById(R.id.payment_method)
-//        var status: TextView = view.findViewById(R.id.status)
-//        var subtotal: TextView = view.findViewById(R.id.subtotal_amt)
-//        var shipping: TextView = view.findViewById(R.id.shipping_amt)
-//        var total_order_amt: TextView = view.findViewById(R.id.total_order_amt)
 
         override fun onClick(v: View?) {
             TODO("Not yet implemented")

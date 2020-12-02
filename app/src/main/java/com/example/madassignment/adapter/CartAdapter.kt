@@ -76,8 +76,6 @@ class CartAdapter(
     }
 
 
-
-
     fun selectAll() {
         isSelectedAll = true;
         notifyDataSetChanged();

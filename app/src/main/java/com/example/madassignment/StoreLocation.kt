@@ -91,10 +91,6 @@ class StoreLocation : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         button_1 = findViewById<Button>(R.id.map_1)
         button_1.setOnClickListener {
-//            val fragment = MapsFragment()
-//            val transition = supportFragmentManager.beginTransaction()
-//            transition.replace(R.id.map_fragment_1,fragment)
-//            transition.commit()
 
             val intent = Intent(this, store_map1::class.java)
             startActivity(intent)

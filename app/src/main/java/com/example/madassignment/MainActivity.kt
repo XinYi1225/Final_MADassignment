@@ -82,8 +82,7 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 //            LayoutInflater.from(this).inflate(R.layout.nav_header_bar, null)
 //
 //     //   username = nav_header.findViewById<TextView>(R.id.profile_name_nav)
-//
-//        username   = nav_header.findViewById<TextView>(R.id.profile_name_nav)
+
 
         vegetables.setOnClickListener() {
             Toast.makeText(this, "Select Vegetables Category", Toast.LENGTH_SHORT).show()
@@ -150,7 +149,7 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
         auth = FirebaseAuth.getInstance()
 
 
-//        uploaditemandimage()
+      //  uploaditemandimage()
 
         readData()
 //      readItem()
@@ -158,36 +157,8 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
 
-//        val navController = Navigation.findNavController(this,R.id.fragment)
-//        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
-        return super.onSupportNavigateUp()
-    }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu,menu)
-//        return true
-//    }
-//    private fun preparePromotionData() {
-//
-//        var promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90
-//        )
-//        promotionList.add(promotion)
-//
-//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
-//        promotionList.add(promotion)
-//
-//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
-//        promotionList.add(promotion)
-//
-//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
-//        promotionList.add(promotion)
-//
-//
-//        promotionAdapter.notifyDataSetChanged()
-//    }
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "Item  clicked", Toast.LENGTH_SHORT).show()
@@ -305,13 +276,13 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 //
 //        val promotionList = ArrayList<PromotionModel>()
 //
-////    var promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90
-////    )
-////    promotionList.add(promotion)
-////
-////    promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
-////    promotionList.add(promotion)
-////
+//    var promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fvegetables%2FCauliflower%20?alt=media&token=6c94bc8d-f3b2-4b67-8ba5-35cba1aca7af", "Hello", "Free Orange", 10.90
+//    )
+//    promotionList.add(promotion)
+//
+//    promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fegg%2FLTP%20Corn%20Egg%20Grade%20A%20?alt=media&token=7e489b4d-8508-4ede-b45a-55045e132146", "ABC_1234", "Free Orange", 10.90)
+//    promotionList.add(promotion)
+//
 ////    promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
 ////    promotionList.add(promotion)
 ////
@@ -393,7 +364,31 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
         });
     }
 
+
+
+
+//    private fun preparePromotionData() {
+//
+//        var promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90
+//        )
+//        promotionList.add(promotion)
+//
+//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
+//        promotionList.add(promotion)
+//
+//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
+//        promotionList.add(promotion)
+//
+//        promotion = PromotionModel("","https://firebasestorage.googleapis.com/v0/b/madassignment-1bc52.appspot.com/o/images%2Fchicken%2FAyam%20?alt=media&token=dabe8d8d-4230-4126-a52c-687d27248c33", "Hello", "Free Orange", 10.90)
+//        promotionList.add(promotion)
+//
+//
+//        promotionAdapter.notifyDataSetChanged()
+//    }
+
 }
+
+
 
 
 

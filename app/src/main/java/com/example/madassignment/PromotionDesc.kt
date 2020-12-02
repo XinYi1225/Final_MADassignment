@@ -75,9 +75,6 @@ class PromotionDesc : AppCompatActivity() {
         }
 
 
-
-
-
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         databaseReference = database?.reference!!.child("Promotion")

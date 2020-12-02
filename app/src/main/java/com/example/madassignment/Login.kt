@@ -38,8 +38,7 @@ class Login : AppCompatActivity() {
 
         // set on-click listener
         clickable_signup.setOnClickListener {
-            // your code to perform when the user clicks on the TextView
-            //Toast.makeText(this@MainActivity, "You clicked on TextView 'Click Me'.", Toast.LENGTH_SHORT).show()
+
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }

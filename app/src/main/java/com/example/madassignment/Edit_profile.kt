@@ -2,24 +2,17 @@ package com.example.madassignment
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
-import java.util.regex.Pattern
 
 
-class Edit_profile2 : AppCompatActivity() {
+class Edit_profile : AppCompatActivity() {
     //    ,View.OnClickListener
     private lateinit var state_edit: Spinner
 
@@ -93,7 +86,6 @@ class Edit_profile2 : AppCompatActivity() {
         databaseReference = database?.reference!!.child("Profile")
 
         clickable_save = findViewById<ImageView>(R.id.save_icon)
-        //     clickable_save.setOnClickListener(this)
 
 
 //        readItem()
@@ -129,135 +121,13 @@ class Edit_profile2 : AppCompatActivity() {
 
         }
 
-//        clickable_save.setOnClickListener {
-//
-//            Toast.makeText(applicationContext, "Saving...", Toast.LENGTH_SHORT).show()
-//            Toast.makeText(applicationContext, "Save successfully", Toast.LENGTH_SHORT).show()
-//
-//            onBackPressed()
-////            val intent_save = Intent(this, View_Profile::class.java)
-////            startActivity(intent_save)
-//        }
-
         // Change Password
         clickable_changePassword = findViewById<TextView>(R.id.changePassword)
 
         clickable_changePassword.setOnClickListener {
 
-            val intent_save = Intent(this, changePassword2::class.java)
+            val intent_save = Intent(this, changePassword::class.java)
             startActivity(intent_save)
-
-
-//            val chgPass_dialog =
-//                LayoutInflater.from(this).inflate(R.layout.change_password_dialog, null)
-//            //AlertDialogBuilder
-//            val builder_AD = AlertDialog.Builder(this)
-//            builder_AD.setView(chgPass_dialog)
-//            //builder_AD.setTitle("Change Password")
-//
-//            //show dialog
-//            val mAlertDialog = builder_AD.show()
-
-//
-//            val reset_pasword =
-//                chgPass_dialog.findViewById<TextInputEditText>(R.id.resetpass_dialog)
-//            reset_pasword.addTextChangedListener(object : TextWatcher {
-//                override fun afterTextChanged(s: Editable) {}
-//
-//                override fun beforeTextChanged(
-//                    s: CharSequence,
-//                    start: Int,
-//                    count: Int,
-//                    after: Int
-//                ) {
-//                }
-//
-//                val reset_layout_Password =
-//                    chgPass_dialog.findViewById<TextInputLayout>(R.id.resetpass_layout_dialog)
-//                val reset_Password =
-//                    chgPass_dialog.findViewById<TextInputEditText>(R.id.resetpass_dialog)
-//
-//
-//                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-//
-//                    val customisedErrorIcon =
-//                        resources.getDrawable(R.drawable.error_icon_display) //getDrawable(int, Resources.Theme) instead.
-//
-//                    customisedErrorIcon?.setBounds(
-//                        0, 0,
-//                        customisedErrorIcon.intrinsicWidth,
-//                        customisedErrorIcon.intrinsicHeight
-//                    )
-//
-//                    val password: String = reset_pasword.text.toString()
-//
-//
-//                    val PASSWORD_PATTERN =
-//                        Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$")
-//                    val matcher = PASSWORD_PATTERN.matcher(password)
-////
-//                    if (!PASSWORD_PATTERN.matcher(password).matches()) {
-//                        reset_Password.setError(
-//                            "Password does not comply to the requirement",
-//                            customisedErrorIcon
-//                        )
-//                        //reset_layout_Password.setError("Password does not comply to the requirement")
-//                    }
-//
-//                }
-//            })
-//
-//            //Confirmed Password
-//            val confirm_password =
-//                chgPass_dialog.findViewById<TextInputEditText>(R.id.confirmpass_dialog)
-//
-//
-//            confirm_password.addTextChangedListener(object : TextWatcher {
-//                override fun afterTextChanged(s: Editable) {
-//
-//                    val customisedErrorIcon =
-//                        resources.getDrawable(R.drawable.error_icon_display) //getDrawable(int, Resources.Theme) instead.
-//
-//                    customisedErrorIcon?.setBounds(
-//                        0, 0,
-//                        customisedErrorIcon.intrinsicWidth,
-//                        customisedErrorIcon.intrinsicHeight
-//                    )
-//
-//                    val password: String = reset_pasword.text.toString()
-//                    val confirmPassword: String = confirm_password.text.toString()
-//                    if (password != confirmPassword) {
-//                        confirm_password.setError("Password does not match", customisedErrorIcon)
-//                        //   confirm_password.setError("Password does not match")
-//                        //   confirm_layout_Password.setError("Password does not match")
-//
-//                    }
-//
-//                }
-//
-//                override fun beforeTextChanged(
-//                    s: CharSequence,
-//                    start: Int,
-//                    count: Int,
-//                    after: Int
-//                ) {
-//                }
-//
-//                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-//            })
-
-
-
-//            val chgPass_save_btn = chgPass_dialog.findViewById(R.id.dialogSaveBtn) as Button
-//
-//            chgPass_save_btn.setOnClickListener{
-//                changePassword()
-//            }
-
-
-
-
-//
 
         }
 
@@ -417,76 +287,5 @@ class Edit_profile2 : AppCompatActivity() {
 
 
     }
-
-//    private fun changePassword() {
-//        val chgPass_dialog = LayoutInflater.from(this).inflate(R.layout.change_password_dialog, null)
-//
-//
-//        currentpass = chgPass_dialog.findViewById<TextInputEditText>(R.id.currentpass_dialog)
-//        resetpass = chgPass_dialog.findViewById<TextInputEditText>(R.id.resetpass_dialog)
-//        confirmpass = chgPass_dialog.findViewById<TextInputEditText>(R.id.confirmpass_dialog)
-//
-//
-//        val customisedErrorIcon =
-//            resources.getDrawable(R.drawable.error_icon_display) //getDrawable(int, Resources.Theme) instead.
-//
-//        customisedErrorIcon?.setBounds(
-//            0, 0,
-//            customisedErrorIcon.intrinsicWidth,
-//            customisedErrorIcon.intrinsicHeight
-//        )
-//
-//        if (currentpass.text.toString().isNotEmpty()
-//            && resetpass.text.toString().isNotEmpty()
-//            && confirmpass.text.toString().isNotEmpty()
-//        ) {
-//
-//            if (resetpass.text.toString().equals(confirmpass.text.toString())) {
-//                val user = auth.currentUser
-//                if (user !=null && user.email != null)
-//                {
-//                    // Get auth credentials from the user for re-authentication. The example below shows
-//                    // email and password credentials but there are multiple possible providers,
-//                    // such as GoogleAuthProvider or FacebookAuthProvider.
-//                    val credential = EmailAuthProvider
-//                        .getCredential(user.email!!, currentpass.text.toString())
-//
-//                    // Prompt the user to re-provide their sign-in credentials
-//                    user.reauthenticate(credential)
-//                        .addOnCompleteListener {
-//                            if (it.isSuccessful){
-//
-//                                Toast.makeText(this, "Re-authentication success", Toast.LENGTH_SHORT).show()
-//
-//                                val user = auth.currentUser
-//                                val newPassword = "SOME-SECURE-PASSWORD"
-//
-//                                user!!.updatePassword(resetpass.text.toString())
-//                                    .addOnCompleteListener { task ->
-//                                        if (task.isSuccessful) {
-//                                            Toast.makeText(this, "Password changed successfully", Toast.LENGTH_SHORT).show()
-//
-//                                           // auth.signOut()
-//                                        }
-//                                    }
-//
-//                            }
-//                            else
-//                                Toast.makeText(this, "Re-authentication failed", Toast.LENGTH_SHORT).show()
-//                        }
-//                }
-//
-//
-//
-//
-//            }
-//
-//        } else {
-//            currentpass.setError("Required Field!", customisedErrorIcon)
-//            currentpass.requestFocus()
-//        }
-//
-//    }
-
 
 }

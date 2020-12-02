@@ -53,8 +53,6 @@ class Delivery : AppCompatActivity(),OnMapReadyCallback {
             onBackPressed()
         }
 
-
-
         address1_delivery = findViewById(R.id.address1_delivery)
         town_delivery = findViewById(R.id.town_delivery)
         postalCode_delivery = findViewById(R.id.postalCode_delivery)
@@ -127,29 +125,6 @@ class Delivery : AppCompatActivity(),OnMapReadyCallback {
             }
         });
     }
-
-//    fun readAddressCheckout() {
-//        val database = FirebaseDatabase.getInstance()
-////        val auth = FirebaseAuth.getInstance()
-//        val ref = database.getReference("Profile/" + auth.currentUser!!.uid + "/")
-//
-//        ref.addValueEventListener(object : ValueEventListener {
-//
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//
-//                user = dataSnapshot.getValue(User::class.java)!!
-//
-////                complete_address = String.format(user.Address) + " "  + String.format(user.Town) + " "  + String.format(user.PostalCode) + " "  + String.format(user.State)
-//
-//                Log.i("user", user.toString())
-//
-//            }
-//
-//            override fun onCancelled(databaseError: DatabaseError) {
-//
-//            }
-//        });
-//    }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap

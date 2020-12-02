@@ -40,7 +40,7 @@
     <string name="ringgit">RM </string>
     <string name="shipping">Shipping Fees</string>
     <string name="total">Total</string>
-    <string name="totalPayment">Total Payment :RM </string>
+    <string name="totalPayment">Total Payment   : RM </string>
     <string name="place_order">Place Order</string>
     <string name="payDone">Payment has been made successfully!</string>
     <string name="done">DONE</string>
@@ -64,9 +64,9 @@
     <string name="deliver">Delivery</string>
     <string name="pickUp">PickUp</string>
     <string name="viewMore">View More Products</string>
-    <string name="payMethod">Payment Method</string>
+    <string name="payMethod">Payment Method :</string>
 
-    <string name="total_items">Total items :</string>
+    <string name="total_items">Total items : </string>
 
 
 </resources>
