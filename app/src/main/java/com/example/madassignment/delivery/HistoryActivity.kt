@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -22,10 +23,13 @@ import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.libraries.places.internal.it
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.util.*
+
 
 
 class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListener,
@@ -46,6 +50,7 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
         auth = FirebaseAuth.getInstance()
+
 
         Log.i("DeliveryHistoryFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(DeliveryViewModel::class.java)
@@ -110,19 +115,17 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
         var itemRef = database.getReference("Profile/" + auth.currentUser!!.uid + "/OrderHistory/" + key + "/")
 
         itemRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    item = snapshot.getValue(HistoryModel::class.java)!!
-                    for (i in item.item_list) {
-                        purchaseList.item_list.add(i)
-                        historyAdapter.notifyItemInserted(purchaseList.item_list.size)
-                    }
-                } else {
-
-                    val intent = Intent(applicationContext, Empty_History::class.java)
-                    startActivity(intent)
-
+            override fun onDataChange(snapshot: DataSnapshot) = if (snapshot.exists()) {
+                item = snapshot.getValue(HistoryModel::class.java)!!
+                for (i in item.item_list) {
+                    purchaseList.item_list.add(i)
+                    historyAdapter.notifyItemInserted(purchaseList.item_list.size)
                 }
+            } else {
+                   Toast.makeText(applicationContext,"Opps, You do not have any oreder yet !",Toast.LENGTH_LONG).show()
+//                    val intent = Intent(applicationContext, Empty_History::class.java)
+//                    startActivity(intent)
+
 
             }
             override fun onCancelled(error: DatabaseError) {

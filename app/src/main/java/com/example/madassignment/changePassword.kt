@@ -92,7 +92,7 @@ class changePassword : AppCompatActivity() {
         cancel_btn = findViewById(R.id.dialogCancelBtn)
 
         cancel_btn.setOnClickListener {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+
             // onBackPressed()
 
             val builder = AlertDialog.Builder(this)

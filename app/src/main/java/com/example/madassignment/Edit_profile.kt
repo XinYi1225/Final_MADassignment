@@ -101,7 +101,8 @@ class Edit_profile : AppCompatActivity() {
             //performing positive action
             builder.setPositiveButton("Yes")
             { dialogInterface, which ->
-                Toast.makeText(applicationContext, "Saving", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Saving", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Successfully save the details", Toast.LENGTH_SHORT).show()
                 saveData()
 
             }
@@ -109,7 +110,7 @@ class Edit_profile : AppCompatActivity() {
             //performing negative action
             builder.setNegativeButton("No")
             { dialogInterface, which ->
-                Toast.makeText(applicationContext, "clicked No", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Clicked no to save", Toast.LENGTH_SHORT).show()
 
             }
             // Create the AlertDialog

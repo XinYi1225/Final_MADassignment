@@ -4,10 +4,7 @@ import android.content.ClipData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
 import com.example.madassignment.PromotionModel
@@ -58,6 +55,7 @@ class PromotionDesc : AppCompatActivity() {
         val addtoCart: Button = findViewById(R.id.addtocart)
 
         addtoCart.setOnClickListener() {
+            Toast.makeText(this, "Added to cart", Toast.LENGTH_SHORT).show()
             Log.i("checkButton", this.applicationContext.toString())
 
             var obj = Cart(

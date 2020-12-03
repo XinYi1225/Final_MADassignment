@@ -85,34 +85,34 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 
 
         vegetables.setOnClickListener() {
-            Toast.makeText(this, "Select Vegetables Category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selected Vegetables Category", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Vegetables::class.java)
             startActivity(intent)
         }
 
         fruits.setOnClickListener() {
-            Toast.makeText(this, "Select Fruits Category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selected Fruits Category", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, Fruit::class.java)
             startActivity(intent)
         }
 
         seafoods.setOnClickListener() {
-            Toast.makeText(this, "Select Seafoods Category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selected Seafoods Category", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, SeafoodActivity::class.java)
             startActivity(intent)
         }
 
         chickens.setOnClickListener() {
-            Toast.makeText(this, "Select Chickens Category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selected Chickens Category", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, Chicken::class.java)
             startActivity(intent)
         }
 
         eggs.setOnClickListener() {
-            Toast.makeText(this, "Select Eggs Category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selected Eggs Category", Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, Egg::class.java)
             startActivity(intent)
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 
         val addtocart_fab: FloatingActionButton = findViewById(R.id.fab)
         addtocart_fab.setOnClickListener() {
-            Toast.makeText(this, "Add to cart", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Clicked My Cart", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity(), PromotionAdapter.OnItemClickListener,
 
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item  clicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Promotion item clicked", Toast.LENGTH_SHORT).show()
         val myIntent = Intent(this, PromotionDesc::class.java)
 
         Log.i("checkObj", promotionList[position].toString())

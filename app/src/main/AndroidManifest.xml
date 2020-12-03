@@ -67,6 +67,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA6CdCk7Rc0uC8ohj9vqqBDm2zt5JJlagg" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -65,7 +65,7 @@ class View_Profile : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             //performing positive action
             builder.setPositiveButton("Yes")
             { dialogInterface, which ->
-                Toast.makeText(applicationContext, "Logout", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Logout", Toast.LENGTH_SHORT).show()
 
                 auth.signOut()
                 startActivity(Intent(this, Login::class.java))
@@ -76,7 +76,7 @@ class View_Profile : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             //performing negative action
             builder.setNegativeButton("No")
             { dialogInterface, which ->
-                Toast.makeText(applicationContext, "clicked No", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Clicked No", Toast.LENGTH_SHORT).show()
             }
             // Create the AlertDialog
             val alertDialog: AlertDialog = builder.create()
