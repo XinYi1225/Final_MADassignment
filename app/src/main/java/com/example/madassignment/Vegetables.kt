@@ -67,8 +67,8 @@ class Vegetables : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         recyclerView.adapter = adapter
         recyclerView.layoutManager = flexManager
 
-        toolbar = findViewById<Toolbar>(R.id.vege_toolbar)
-        setSupportActionBar(toolbar)
+//        toolbar = findViewById<Toolbar>(R.id.vege_toolbar)
+//        setSupportActionBar(toolbar)
 
 
         val floatingbutton: FloatingActionButton = findViewById(R.id.floating_action_button)

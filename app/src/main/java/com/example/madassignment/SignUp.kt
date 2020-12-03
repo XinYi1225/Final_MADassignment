@@ -316,7 +316,7 @@ class SignUp : AppCompatActivity(),View.OnClickListener {
                     Toast.makeText(applicationContext,"Incomplete Details!",Toast.LENGTH_LONG).show()
 
                 else if(!checkBox_tc_signup.isChecked()){
-                    Toast.makeText(applicationContext,"Tick checkbox!",Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,"Please tick the checkbox!",Toast.LENGTH_LONG).show()
                 }
 
                 else {

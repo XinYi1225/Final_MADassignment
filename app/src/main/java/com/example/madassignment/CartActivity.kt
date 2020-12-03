@@ -90,11 +90,14 @@ class CartActivity : AppCompatActivity(), ButtonClickedListener {
             ShoppingCart.removeMoreThanOneItem(deleteList,this)
         }
 
-
+        positionlist.sort()
         for(i in positionlist.indices.reversed()){
-            cartlist.removeAt(i)
-            adapter.notifyItemChanged(i);
-            adapter.notifyItemRangeChanged(i, cartlist.size)
+            Log.i("poslist", "cart size before:" + cartlist.size.toString() + "position before:" + positionlist[i].toString())
+            cartlist.removeAt(positionlist[i])
+//            adapter.notifyItemRemoved(i)
+            adapter.notifyItemChanged(positionlist[i]);
+            adapter.notifyItemRangeChanged(positionlist[i], cartlist.size)
+            Log.i("poslist", "cart size :" + cartlist.size.toString() + "position:" + positionlist[i].toString())
         }
         positionlist.clear()
         cartpricetotal.setText("RM " + String.format("%.2f", ShoppingCart.calcTotal()))

@@ -122,7 +122,7 @@ class HistoryActivity  : AppCompatActivity() , HistoryAdapter.OnItemClickListene
                     historyAdapter.notifyItemInserted(purchaseList.item_list.size)
                 }
             } else {
-                   Toast.makeText(applicationContext,"Opps, You do not have any oreder yet !",Toast.LENGTH_LONG).show()
+                   Toast.makeText(applicationContext,"Opps, You do not have any order yet !",Toast.LENGTH_LONG).show()
 //                    val intent = Intent(applicationContext, Empty_History::class.java)
 //                    startActivity(intent)
 
