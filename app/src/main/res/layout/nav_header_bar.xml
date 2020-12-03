@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/maven_pro"
-            android:text="Welcome to Mr Framer Grocer"
+            android:text="Welcome to Mr Farmer Grocer"
             android:textColor="@color/black"
             android:textSize="18sp" />
 

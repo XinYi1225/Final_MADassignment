@@ -1,25 +1,22 @@
 package com.example.madassignment.deliveryCheckout
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.madassignment.R
 import com.example.madassignment.PaymentDoneActivity
+import com.example.madassignment.R
 import com.example.madassignment.User
 import com.example.madassignment.delivery.DetailModel
 import com.example.madassignment.delivery.HistoryAdapter
 import com.example.madassignment.delivery.HistoryModel
-import com.example.madassignment.deliveryCheckout.DeliverPayViewModel
 import com.example.madassignment.object_class.ShoppingCart
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-
-
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -60,7 +57,7 @@ class CheckoutActivity : AppCompatActivity() {
         val display_address = intent_address.getStringExtra("data")
 
         if (display_address != null) {
-            Log.i("display_address",display_address)
+            Log.i("display_address", display_address)
         }
 
         val delivery_address = findViewById<TextView>(R.id.delivery_address)
@@ -74,10 +71,18 @@ class CheckoutActivity : AppCompatActivity() {
         findViewById<Button>(R.id.done_button).setOnClickListener {
             if(findViewById<RadioGroup>(R.id.payment_options).getCheckedRadioButtonId() == -1){
                 // no radio buttons are checked
-                Toast.makeText(applicationContext, "Please select a payment method!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Please select a payment method!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
             else{
-                Toast.makeText(applicationContext, "Payment has been made successfully!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Payment has been made successfully!",
+                    Toast.LENGTH_SHORT
+                ).show()
                 val payMethod: Int = findViewById<RadioGroup>(R.id.payment_options).getCheckedRadioButtonId()
                 val selectedPayMethod: RadioButton? = findViewById<RadioButton>(payMethod)
                 setCheckoutData(selectedPayMethod?.getText().toString())
@@ -85,6 +90,7 @@ class CheckoutActivity : AppCompatActivity() {
                 ShoppingCart.clear()
 
                 val intent = Intent(this, PaymentDoneActivity::class.java)
+
                 startActivity(intent)
             }
         }
@@ -98,9 +104,15 @@ class CheckoutActivity : AppCompatActivity() {
     }
 
     private fun updateTotal(): Double{
-        findViewById<TextView>(R.id.subtotal_amount).text = String.format("%.2f",viewModel.subtotal)
-        findViewById<TextView>(R.id.shipping_amount).text = String.format("%.2f",viewModel.shippingFees)
-        findViewById<TextView>(R.id.final_payment).text = String.format("%.2f",viewModel.totalPaid)
+        findViewById<TextView>(R.id.subtotal_amount).text = String.format(
+            "%.2f",
+            viewModel.subtotal
+        )
+        findViewById<TextView>(R.id.shipping_amount).text = String.format(
+            "%.2f",
+            viewModel.shippingFees
+        )
+        findViewById<TextView>(R.id.final_payment).text = String.format("%.2f", viewModel.totalPaid)
 
         return viewModel.totalPaid
     }
@@ -124,7 +136,13 @@ class CheckoutActivity : AppCompatActivity() {
         val cartlist = ShoppingCart.getCart()
 
         for(order in cartlist){
-            var convertToItem = DetailModel(order.itemID, order.itemImage, order.itemName, order.itemQty, order.itemPrice)
+            var convertToItem = DetailModel(
+                order.itemID,
+                order.itemImage,
+                order.itemName,
+                order.itemQty,
+                order.itemPrice
+            )
             itemList.add(convertToItem)
         }
         var pushkey: String?= myRef.push().key
@@ -135,11 +153,21 @@ class CheckoutActivity : AppCompatActivity() {
         val total_amt = updateTotal()
 
         //write the details of checkout into database
-        myRef = database.getReference("Profile/"+auth.currentUser!!.uid+"/OrderHistory/" + pushkey + "/")
+        myRef = database.getReference("Profile/" + auth.currentUser!!.uid + "/OrderHistory/" + pushkey + "/")
 
         Log.i("list", itemList.toString())
 
-        var details = HistoryModel("${pushkey}", "${transactionDate}", itemList,ShoppingCart.getShoppingCartSize(),ShoppingCart.calcTotal(), shipping_fees,total_amt,"${payMethod}","${status}")
+        var details = HistoryModel(
+            "${pushkey}",
+            "${transactionDate}",
+            itemList,
+            ShoppingCart.getShoppingCartSize(),
+            ShoppingCart.calcTotal(),
+            shipping_fees,
+            total_amt,
+            "${payMethod}",
+            "${status}"
+        )
 
         Log.i("list", details.item_list.toString())
         myRef.setValue(details)
