@@ -7,10 +7,8 @@ import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.MenuItem
 import android.view.View
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
@@ -171,9 +169,33 @@ class StoreLocation : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 startActivity(myintent)
             }
             R.id.nav_logout -> {
-                auth.signOut()
-                startActivity(Intent(this, Login::class.java))
-                finish()
+                val builder = AlertDialog.Builder(this)
+                //set title for alert dialog
+                builder.setTitle(R.string.dialogTitle)
+                //set message for alert dialog
+                builder.setMessage(R.string.dialogMessage)
+                builder.setIcon(android.R.drawable.ic_lock_lock)
+
+                //performing positive action
+                builder.setPositiveButton("Yes")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Logout", Toast.LENGTH_SHORT).show()
+
+                    auth.signOut()
+                    startActivity(Intent(this, Login::class.java))
+                    finish()
+                }
+
+                //performing negative action
+                builder.setNegativeButton("No")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Clicked No", Toast.LENGTH_SHORT).show()
+                }
+                // Create the AlertDialog
+                val alertDialog: AlertDialog = builder.create()
+
+                // Set other dialog properties
+                alertDialog.show()
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -186,181 +208,5 @@ class StoreLocation : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
 
 }
-
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-
-
-//    override fun onMapReady(googleMap: GoogleMap) {
-//        mMap = googleMap
-//        // Add a marker in Sydney and move the camera
-//        val store_loc1 = LatLng(3.088465, 101.690533)
-//
-//        val store_loc2 = LatLng(2.996970, 101.673820)
-//
-//        val zoomLevel = 10f // 1- World, 5- Landmass/continent, 10- City, 15: Streets, 20- Building
-//
-//
-//
-//        mMap.addMarker(
-//            MarkerOptions().position(store_loc2).title("Mr Framer Grocer (Equine Park)")
-//                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-//        )
-//        mMap.moveCamera(newLatLngZoom(store_loc2, zoomLevel))
-//
-//
-//        mMap.addMarker(
-//            MarkerOptions().position(store_loc1).title("Mr Framer Grocer (Kuchai Lama)")
-//                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
-//        )
-//        mMap.moveCamera(newLatLngZoom(store_loc1, zoomLevel))
-//
-//        with(mMap.uiSettings) {
-//            setZoomControlsEnabled(true)
-//            setCompassEnabled(true)
-//            setScrollGesturesEnabled(true)
-//            setTiltGesturesEnabled(true)
-//            setRotateGesturesEnabled(true)
-//
-//            /*isZoomControlsEnabled = isChecked(R.id.zoom_button)
-//            isCompassEnabled = isChecked(R.id.compass_button)
-//            isMyLocationButtonEnabled = isChecked(R.id.myloc_button)
-//            isIndoorLevelPickerEnabled = isChecked(R.id.level_button)
-//            isMapToolbarEnabled = isChecked(R.id.maptoolbar_button)
-//            isZoomGesturesEnabled = isChecked(R.id.zoomgest_button)
-//            isScrollGesturesEnabled = isChecked(R.id.scrollgest_button)
-//            isTiltGesturesEnabled = isChecked(R.id.tiltgest_button)
-//            isRotateGesturesEnabled = isChecked(R.id.rotategest_button)*/
-//
-//        }
-//
-//
-//        setUpMap()
-//
-//
-//    }
-//    companion object {
-//        private const val LOCATION_PERMISSION_REQUEST_CODE = 1
-//    }
-//
-//    private fun setUpMap() {
-//        if (ActivityCompat.checkSelfPermission(this,
-//                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this,
-//                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
-//            return
-//        }
-//    }
-//    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-//        // Change the map type based on the user's selection.
-//        R.id.normal_map -> {
-//            mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
-//            true
-//        }
-//        R.id.hybrid_map -> {
-//            mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
-//            true
-//        }
-//        R.id.satellite_map -> {
-//            mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
-//            true
-//        }
-//        R.id.terrain_map -> {
-//            mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
-//            true
-//        }
-//        else -> super.onOptionsItemSelected(item)
-//    }
-//
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        val inflater = menuInflater
-//        inflater.inflate(R.menu.map_option, menu)
-//        return true
-//    }
-//
-//}
-
-//    internal lateinit var mLastLocation: Location
-//    internal var mCurrLocationMarker: Marker? = null
-//    internal var mGoogleApiClient: GoogleApiClient? = null
-//    internal lateinit var mLocationRequest: LocationRequest
-
-//    @Synchronized
-
-//     fun onConnected(bundle: Bundle?) {
-//
-//        mLocationRequest = LocationRequest()
-//        mLocationRequest.interval = 1000
-//        mLocationRequest.fastestInterval = 1000
-//        mLocationRequest.priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
-//
-//    }
-//
-//     fun onConnectionSuspended(i: Int) {
-//
-//    }
-//
-//     fun onLocationChanged(location: Location) {
-//
-//        mLastLocation = location
-//        if (mCurrLocationMarker != null) {
-//            mCurrLocationMarker!!.remove()
-//        }
-//        //Place current location marker
-//        val latLng = LatLng(location.latitude, location.longitude)
-//        val markerOptions = MarkerOptions()
-//        markerOptions.position(latLng)
-//        markerOptions.title("Current Position")
-//        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
-//        mCurrLocationMarker = mMap!!.addMarker(markerOptions)
-//
-//        //move map camera
-//        mMap!!.moveCamera(CameraUpdateFactory.newLatLng(latLng))
-//        mMap!!.animateCamera(CameraUpdateFactory.zoomTo(11f))
-//
-//        //stop location updates
-//        if (mGoogleApiClient != null) {
-//            LocationServices.getFusedLocationProviderClient(this)
-//        }
-//
-//    }
-
-//     fun onConnectionFailed(connectionResult: ConnectionResult) {
-//
-//    }
-
-    /*fun searchLocation(view: View) {
-        val locationSearch: EditText = findViewById<EditText>(R.id.editText)
-        lateinit var location: String
-        location = locationSearch.text.toString()
-        var addressList: List<Address>? = null
-
-        if (location == null || location == "") {
-            Toast.makeText(applicationContext,"provide location",Toast.LENGTH_SHORT).show()
-        }
-        else{
-            val geoCoder = Geocoder(this)
-            try {
-                addressList = geoCoder.getFromLocationName(location, 1)
-
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-            val address = addressList!![0]
-            val latLng = LatLng(address.latitude, address.longitude)
-            mMap!!.addMarker(MarkerOptions().position(latLng).title(location))
-            mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-            Toast.makeText(applicationContext, address.latitude.toString() + " " + address.longitude, Toast.LENGTH_LONG).show()
-        }
-    }*/
-
 
 

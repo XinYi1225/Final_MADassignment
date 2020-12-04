@@ -2,13 +2,14 @@ package com.example.madassignment
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -36,7 +37,7 @@ import io.paperdb.Paper
 class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
     NavigationView.OnNavigationItemSelectedListener {
 
-    private var  myDataset :  MutableList<Item> = mutableListOf()
+    private var myDataset: MutableList<Item> = mutableListOf()
     lateinit var searchView: androidx.appcompat.widget.SearchView
     lateinit var toolbar: Toolbar
     lateinit var adapter: ItemAdapter
@@ -81,8 +82,8 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         val navView: NavigationView = findViewById(R.id.nav_view)
 
 
-        val header_menu : ImageView = findViewById(R.id.nav_menu)
-        header_menu.setOnClickListener{
+        val header_menu: ImageView = findViewById(R.id.nav_menu)
+        header_menu.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
 
         }
@@ -180,7 +181,8 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         }
 
     }
-    fun readData(){
+
+    fun readData() {
         // Write a message to the database
 
         // Write a message to the database
@@ -190,14 +192,19 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         // Read from the database
         myRef.addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(dataSnapshot : DataSnapshot) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                for ( childDataSnapshot : DataSnapshot in dataSnapshot.getChildren()) {
-                    myRef = database.getReference("Item/Chicken/"+ childDataSnapshot.getKey().toString())
+                for (childDataSnapshot: DataSnapshot in dataSnapshot.getChildren()) {
+                    myRef = database.getReference(
+                        "Item/Chicken/" + childDataSnapshot.getKey().toString()
+                    )
 //                    Log.i("data", childDataSnapshot.getKey().toString()); //displays the key for the node
 
 //                    Log.i("data",childDataSnapshot.child(childDataSnapshot.getKey().toString()).value.toString());
-                    Log.i("data",childDataSnapshot.getValue(Item::class.java).toString());//gives the value for given keyname
+                    Log.i(
+                        "data",
+                        childDataSnapshot.getValue(Item::class.java).toString()
+                    );//gives the value for given keyname
                     childDataSnapshot.getValue(Item::class.java)?.let { myDataset.add(it) }
                     adapter.notifyItemInserted(myDataset.size)
 
@@ -206,7 +213,7 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
 
             }
 
-            override  fun onCancelled(databaseError : DatabaseError) {
+            override fun onCancelled(databaseError: DatabaseError) {
 
             }
         });
@@ -262,15 +269,41 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
                 startActivity(myintent)
             }
             R.id.nav_logout -> {
-                auth.signOut()
-                startActivity(Intent(this, Login::class.java))
-                finish()
+                val builder = AlertDialog.Builder(this)
+                //set title for alert dialog
+                builder.setTitle(R.string.dialogTitle)
+                //set message for alert dialog
+                builder.setMessage(R.string.dialogMessage)
+                builder.setIcon(android.R.drawable.ic_lock_lock)
+
+                //performing positive action
+                builder.setPositiveButton("Yes")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Logout", Toast.LENGTH_SHORT).show()
+
+                    auth.signOut()
+                    startActivity(Intent(this, Login::class.java))
+                    finish()
+                }
+
+                //performing negative action
+                builder.setNegativeButton("No")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Clicked No", Toast.LENGTH_SHORT).show()
+                }
+                // Create the AlertDialog
+                val alertDialog: AlertDialog = builder.create()
+
+                // Set other dialog properties
+                alertDialog.show()
+
+
             }
         }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-
 
 
     }

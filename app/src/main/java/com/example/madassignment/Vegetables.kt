@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -257,9 +258,33 @@ class Vegetables : AppCompatActivity(), ItemAdapter.OnItemClickListener,
                 startActivity(myintent)
             }
             R.id.nav_logout -> {
-                auth.signOut()
-                startActivity(Intent(this, Login::class.java))
-                finish()
+                val builder = AlertDialog.Builder(this)
+                //set title for alert dialog
+                builder.setTitle(R.string.dialogTitle)
+                //set message for alert dialog
+                builder.setMessage(R.string.dialogMessage)
+                builder.setIcon(android.R.drawable.ic_lock_lock)
+
+                //performing positive action
+                builder.setPositiveButton("Yes")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Logout", Toast.LENGTH_SHORT).show()
+
+                    auth.signOut()
+                    startActivity(Intent(this, Login::class.java))
+                    finish()
+                }
+
+                //performing negative action
+                builder.setNegativeButton("No")
+                { dialogInterface, which ->
+                    Toast.makeText(applicationContext, "Clicked No", Toast.LENGTH_SHORT).show()
+                }
+                // Create the AlertDialog
+                val alertDialog: AlertDialog = builder.create()
+
+                // Set other dialog properties
+                alertDialog.show()
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
