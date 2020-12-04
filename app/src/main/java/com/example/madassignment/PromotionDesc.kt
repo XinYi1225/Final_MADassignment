@@ -29,8 +29,6 @@ class PromotionDesc : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_promotion_desc)
 
-
-
         var promtion_image: ImageView = findViewById(R.id.promotion_image)
         var promotion_title: TextView = findViewById(R.id.cardview_title)
         var promotion_subTitle: TextView = findViewById(R.id.discount_text_image)

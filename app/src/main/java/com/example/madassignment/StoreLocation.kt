@@ -114,11 +114,6 @@ class StoreLocation : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         navView.setNavigationItemSelectedListener(this)
 
-//        val menu = findViewById<ImageView>(R.id.menu_list)
-//        menu.setOnClickListener {
-//
-////            drawerLayout.openDrawer(GravityCompat.START)
-//        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

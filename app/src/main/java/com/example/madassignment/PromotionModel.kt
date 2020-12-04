@@ -27,13 +27,6 @@ class PromotionModel:Serializable{
 
     constructor(){}
 
-//    init {
-//        this.promtion_image = promtion_image
-//        this.promotion_title = promotion_title!!
-//        this.promotion_subtitle = promotion_subtitle!!
-//        this.promotion_price = promotion_price!!
-//
-//    }
     fun getID(): String {
      return promotion_id
     }

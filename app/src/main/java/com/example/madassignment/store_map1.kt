@@ -70,11 +70,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
     }
 
 
-
-//
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.map)
@@ -86,7 +81,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
 
-
         toolbar = findViewById<Toolbar>(R.id.map_toolbar)
         setSupportActionBar(toolbar)
 
@@ -95,7 +89,7 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
         //Up button
         go_back.setOnClickListener {
 
-          onBackPressed()
+            onBackPressed()
         }
     }
 
@@ -106,7 +100,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
         getLocationAccess()
         // Add a marker in Sydney and move the camera
         val store_loc1 = LatLng(3.088465, 101.690533)
-
 
         val zoomLevel = 15f // 1- World, 5- Landmass/continent, 10- City, 15: Streets, 20- Building
 
@@ -135,7 +128,6 @@ class store_map1 : AppCompatActivity(), OnMapReadyCallback {
 
         val inflater = menuInflater
         inflater.inflate(R.menu.map_option, menu)
-
 
         return true
     }
