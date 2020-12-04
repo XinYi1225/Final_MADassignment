@@ -47,8 +47,7 @@ class Login : AppCompatActivity() {
         val clickable_forgot_password = findViewById(R.id.clickable_forgot_password) as TextView
 
         clickable_forgot_password.setOnClickListener {
-            // your code to perform when the user clicks on the TextView
-            //Toast.makeText(this@MainActivity, "You clicked on TextView 'Click Me'.", Toast.LENGTH_SHORT).show()
+
             val intent = Intent(this, ForgotPassword::class.java)
             startActivity(intent)
         }
@@ -132,7 +131,7 @@ class Login : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
+
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
@@ -145,8 +144,6 @@ class Login : AppCompatActivity() {
 
 
         val customisedErrorIcon = resources.getDrawable(R.drawable.error_icon_display) //getDrawable(int, Resources.Theme) instead.
-        //val customisedErrorIcon = ContextCompat.getDrawable(this, R.drawable.error_icon_display);
-
 
         customisedErrorIcon?.setBounds(
             0, 0,

@@ -156,7 +156,7 @@ class PickUp : AppCompatActivity(),OnMapReadyCallback {
                             .snippet("Distance = $s KM")
 
                     mMap!!.addMarker(destination)
-                    //mMap!!.addMarker(origin)
+
                     Toast.makeText(this@PickUp,"Distance = $s KM",Toast.LENGTH_SHORT).show()
 
                     tvCurrentAddress!!.setText("Distance = $s KM")
@@ -255,10 +255,7 @@ class PickUp : AppCompatActivity(),OnMapReadyCallback {
                             longitude = currentLocation.longitude
                         }
                     } else{
-                        /*Toast.makeText(
-                                this@MainActivity,"Current location not found.",
-                                Toast.LENGTH_SHORT
-                        ).show()*/
+
                         askGalleryPermissionLocation()
                     }
                 }

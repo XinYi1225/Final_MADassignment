@@ -38,8 +38,6 @@ class PickupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pickup)
 
-//        val binding = FragmentCheckoutBinding.inflate(inflater, container, false)
-
         Log.i("CheckoutFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(PickupPayViewModel::class.java)
         viewModel.subtotal = ShoppingCart.calcTotal()
