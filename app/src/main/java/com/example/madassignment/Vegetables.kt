@@ -91,7 +91,7 @@ class Vegetables : AppCompatActivity(), ItemAdapter.OnItemClickListener,
 
         navView.setNavigationItemSelectedListener(this)
 
-
+        auth = FirebaseAuth.getInstance()
 
     }
 

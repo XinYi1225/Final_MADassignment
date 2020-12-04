@@ -91,7 +91,7 @@ class Chicken : AppCompatActivity(), ItemAdapter.OnItemClickListener,
 
         navView.setNavigationItemSelectedListener(this)
 
-
+        auth = FirebaseAuth.getInstance()
     }
 
     //ON EACH ITEM CLICKED

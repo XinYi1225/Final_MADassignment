@@ -89,7 +89,7 @@ class SeafoodActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener,
         drawerLayout.closeDrawer(GravityCompat.START)
 
         navView.setNavigationItemSelectedListener(this)
-
+        auth = FirebaseAuth.getInstance()
 
     }
     //ON EACH ITEM CLICKED
