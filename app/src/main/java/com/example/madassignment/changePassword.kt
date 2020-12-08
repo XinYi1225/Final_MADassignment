@@ -154,7 +154,7 @@ class changePassword : AppCompatActivity() {
 
         if (currentpass.text.toString().isEmpty()) {
             currentpass.setError("Required Field!", customisedErrorIcon)
-            // currentpass.requestFocus()
+            //currentpass.requestFocus()
 
             check_error += 1
         }
@@ -168,6 +168,28 @@ class changePassword : AppCompatActivity() {
         if (confirmpass.text.toString().isEmpty()) {
             confirmpass.setError("Required Field!", customisedErrorIcon)
             // confirmpass.requestFocus()
+
+            check_error += 1
+        }
+
+        val password: String = newpass.getText().toString()
+        val PASSWORD_PATTERN =
+            Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,15}$")
+
+        if (!PASSWORD_PATTERN.matcher(password).matches()) {
+            newpass.setError(
+                "Password does not comply to the requirement",
+                customisedErrorIcon
+            )
+           // newpass.requestFocus()
+            check_error += 1
+
+        }
+
+        val confirmPassword: String = confirmpass.getText().toString()
+        if (password != confirmPassword) {
+            confirmpass.setError("Password does not match", customisedErrorIcon)
+            //confirmpass.requestFocus()
 
             check_error += 1
         }
